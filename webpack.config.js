@@ -10,8 +10,13 @@ const webConfig = {
     module: {
         rules: [
             {
-                test: /\.(vue)$/,
+                test: /\.vue$/,
                 use: "vue-loader",
+            },
+            {
+                test: /\.tsx?$/,
+                use: "ts-loader",
+                exclude: /node_modules/,
             },
         ],
     },
@@ -19,6 +24,9 @@ const webConfig = {
         new HtmlWebpackPlugin({ template: "./src/index.html" }),
         new VueLoaderPlugin(),
     ],
+    resolve: {
+        extensions: [".tsx", ".ts", ".js", ".vue"],
+    },
     output: {
         filename: "renderer.js",
         path: path.resolve(__dirname, "dist"),
