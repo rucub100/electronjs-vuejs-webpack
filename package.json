@@ -4,9 +4,11 @@
   "description": "Template project for electronjs + vuejs + webpack",
   "private": true,
   "scripts": {
-    "serve": "webpack serve",
-    "webpack:watch": "webpack watch",
-    "electron": "electron ./dist"
+    "serve": "NODE_ENV=development webpack serve",
+    "build": "rm -rf ./dist && webpack",
+    "webpack:watch": "NODE_ENV=development webpack watch",
+    "electron": "electron ./dist",
+    "clean": "rm -rf ./dist"
   },
   "repository": {
     "type": "git",
