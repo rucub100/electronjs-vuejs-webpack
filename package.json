@@ -1,0 +1,21 @@
+{
+  "name": "electronjs-vuejs-webpack",
+  "version": "0.0.1",
+  "description": "Template project for electronjs + vuejs + webpack",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rucub100/electronjs-vuejs-webpack.git"
+  },
+  "author": "Ruslan Curbanov",
+  "bugs": {
+    "url": "https://github.com/rucub100/electronjs-vuejs-webpack/issues"
+  },
+  "homepage": "https://github.com/rucub100/electronjs-vuejs-webpack#readme",
+  "devDependencies": {
+    "electron": "^12.0.2"
+  }
+}
