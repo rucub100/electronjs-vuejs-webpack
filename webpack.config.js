@@ -1,15 +1,23 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { VueLoaderPlugin } = require("vue-loader");
 
 const mode = process.env.NODE_ENV || "production";
 
 const webConfig = {
     mode,
     entry: "./src/app/renderer.js",
+    module: {
+        rules: [
+            {
+                test: /\.(vue)$/,
+                use: "vue-loader",
+            },
+        ],
+    },
     plugins: [
-        new HtmlWebpackPlugin({
-            template: "./src/index.html",
-        }),
+        new HtmlWebpackPlugin({ template: "./src/index.html" }),
+        new VueLoaderPlugin(),
     ],
     output: {
         filename: "renderer.js",
