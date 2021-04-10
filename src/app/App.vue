@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="app">
         <h1>Hello World!</h1>
         <p>
             We are using Node.js <span id="node-version"></span>, Chromium
@@ -13,13 +13,16 @@
 </template>
 
 <script>
-export default {
+import Vue from "vue";
+
+export default Vue.extend({
+    name: "App",
     data: function () {
         return {
             message: "Hello Vue!",
         };
     },
-};
+});
 </script>
 
 <style>

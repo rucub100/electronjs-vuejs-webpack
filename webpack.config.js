@@ -6,7 +6,7 @@ const mode = process.env.NODE_ENV || "production";
 
 const webConfig = {
     mode,
-    entry: "./src/app/renderer.js",
+    entry: "./src/app/renderer.ts",
     module: {
         rules: [
             {
@@ -36,7 +36,16 @@ const webConfig = {
 const electronMainConfig = {
     mode,
     target: "electron-main",
-    entry: "./src/electron/main.js",
+    entry: "./src/electron/main.ts",
+    module: {
+        rules: [
+            {
+                test: /\.ts$/,
+                use: "ts-loader",
+                exclude: /node_modules/,
+            },
+        ],
+    },
     output: {
         filename: "index.js",
         path: path.resolve(__dirname, "dist"),
@@ -46,7 +55,16 @@ const electronMainConfig = {
 const electronPreloadConfig = {
     mode,
     target: "electron-preload",
-    entry: "./src/electron/preload.js",
+    entry: "./src/electron/preload.ts",
+    module: {
+        rules: [
+            {
+                test: /\.ts$/,
+                use: "ts-loader",
+                exclude: /node_modules/,
+            },
+        ],
+    },
     output: {
         filename: "preload.js",
         path: path.resolve(__dirname, "dist"),
